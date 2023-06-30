@@ -7,7 +7,7 @@ createApp({
         const image = ref('./assets/images/socks_green.jpg')
         const url = ref('http://www.camt.cmu.ac.th.')
         const inStock = ref(true)
-        const inventory = ref(20)
+        const inventory = ref(100)
         const sale = ref(true)
         const details = ref([
             '50% cotton',
@@ -30,6 +30,10 @@ createApp({
             image.value = variantImage
         }
 
+        function toggleStockStatus() {
+            inStock.value = !inStock.value
+        }
+        
         return{
             product, 
             description,
@@ -43,7 +47,8 @@ createApp({
             sizes,
             cart,
             addToCart,
-            updateImage
+            updateImage,
+            toggleStockStatus
         }
     }
 

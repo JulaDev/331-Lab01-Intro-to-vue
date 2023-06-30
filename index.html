@@ -24,21 +24,35 @@
         </div>
         <div class="product-info">
             <a :href="url"> <h1>{{product}}</h1> </a>
-            <p v-if="inventory > 10">In Stock</p>
-            <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock></p>
+            
+            <!-- status -->
+            <p v-if="inStock">In Stock</p>
+
+            <!--<p v-if="inventory > 10 && isInStock">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p> -->
+
             <p v-else>Out of Stock</p>
+
+            <!--<p v-if="isInStock">In Stock</p>
+            <p v-else>Out of Stock</p> -->
+
             <p v-if="sale">On Sale</p>
             <p v-else="sale">Not On Sale</p>
+
             <ul>
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
+
             <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">
                 {{ variant.color }}
             </div>
+
             <div v-for="size in sizes">
                 {{size}}
             </div>
+
             <button class="button" @click="addToCart">Add To Cart</button>
+            <button class="button" @click="toggleStockStatus">Toggle</button>
         </div>
         <h2>{{description}}</h2>
     </div>

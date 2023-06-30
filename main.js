@@ -21,6 +21,7 @@ createApp({
         const sizes = ref([
             's','M','L'
         ])
+        const cart = ref(0)
         return{
             product, 
             description,
@@ -31,7 +32,8 @@ createApp({
             sale,
             details,
             variants,
-            sizes
+            sizes,
+            cart
         }
     }
 

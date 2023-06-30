@@ -3,10 +3,11 @@ const { createApp, ref } = Vue
 createApp({
     setup(){
         const product = ref('Boots')
+        const brand = ref('SE 331')
         const description = ref('features to keep you warm in cold weather, or stylish socks for special occasions')
         const image = ref('./assets/images/socks_green.jpg')
         const url = ref('http://www.camt.cmu.ac.th.')
-        const inStock = ref(false) // Change to false -> Cart = 0 and when out of stock don't click add to cart
+        const inStock = ref(true) // Change to false -> Cart = 0 and when out of stock don't click add to cart
         const inventory = ref(100)
         const sale = ref(true)
         const details = ref([
@@ -22,7 +23,7 @@ createApp({
             's','M','L'
         ])
         const cart = ref(0)
-        
+
         function addToCart(){
             cart.value +=1
         }
@@ -37,6 +38,7 @@ createApp({
         
         return{
             product, 
+            brand,
             description,
             image,
             url,

@@ -8,13 +8,21 @@ createApp({
         const url = ref('http://www.camt.cmu.ac.th.')
         const inStock = ref(true)
         const inventory = ref(20)
+        const sale = ref(true)
+        const details = ref([
+            '50% cotton',
+            '30% wool',
+            '20% polyester'
+        ])
         return{
             product, 
             description,
             image,
             url,
             inStock,
-            inventory
+            inventory,
+            sale,
+            details
         }
     }
 

@@ -54,8 +54,9 @@
                 {{size}}
             </div>
 
-            <button class="button" @click="addToCart">Add To Cart</button>
+            <button class="button" :disabled='!inStock' @click="addToCart">Add To Cart</button>
             <button class="button" @click="toggleStockStatus">Toggle</button>
+
         </div>
         <h2>{{description}}</h2>
     </div>

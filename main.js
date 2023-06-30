@@ -1,4 +1,4 @@
-const { createApp, ref } = Vue 
+const { createApp, ref, computed } = Vue 
 
 createApp({
     setup(){
@@ -36,9 +36,14 @@ createApp({
             inStock.value = !inStock.value
         }
         
+        const title = computed(() =>{
+            return brand.value + ' ' + product.value
+        })
+
         return{
-            product, 
-            brand,
+            //product, 
+            //brand,
+            title,
             description,
             image,
             url,

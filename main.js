@@ -15,8 +15,8 @@ createApp({
             '20% polyester'
         ])
         const variants = ref([
-            { id: 2234, color: 'green'},
-            { id: 2235, color: 'blue'}
+            { id: 2234, color: 'green', image: ' ./assets/images/socks_green.jpg'},
+            { id: 2235, color: 'blue', image: ' ./assets/images/socks_blue.jpg'}
         ])
         const sizes = ref([
             's','M','L'
@@ -25,6 +25,11 @@ createApp({
         function addToCart(){
             cart.value +=1
         }
+
+        function updateImage(variantImage){
+            image.value = variantImage
+        }
+
         return{
             product, 
             description,
@@ -37,7 +42,8 @@ createApp({
             variants,
             sizes,
             cart,
-            addToCart
+            addToCart,
+            updateImage
         }
     }
 

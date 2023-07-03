@@ -54,6 +54,16 @@ createApp({
             return variants.value[selectedVariant.value].quantity
         })
 
+        const onSale= ref(true); 
+
+        const saleStatus = computed(() =>{
+            if(onSale.value){
+                return `${brand.value} ${product.value} is on sale`;
+            } else {
+                return '';
+            }
+        })
+
         return{
             //product, 
             //brand,
@@ -71,7 +81,8 @@ createApp({
             addToCart,
             updateImage,
             toggleStockStatus,
-            updateVariant
+            updateVariant,
+            saleStatus
         }
     }
 

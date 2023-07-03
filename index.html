@@ -37,7 +37,9 @@
             <p v-else>Out of Stock</p> -->
 
             <p v-if="sale">On Sale</p>
-            <p v-else="sale">Not On Sale</p>
+            <p v-else="sale">Out On Sale</p>
+
+            <p>{{saleStatus}}</p>
 
             <ul>
                 <li v-for="detail in details">{{detail}}</li>

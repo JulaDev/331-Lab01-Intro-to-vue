@@ -58,9 +58,9 @@ createApp({
 
         const saleStatus = computed(() =>{
             if(onSale.value){
-                return `${brand.value} ${product.value} is on sale`;
+                return brand.value+ ' ' +product.value+ "is on sale";
             } else {
-                return '';
+                return brand.value+ ' ' +product.value;
             }
         })
 

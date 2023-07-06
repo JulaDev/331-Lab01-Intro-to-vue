@@ -4,9 +4,13 @@ const app = createApp({
         const cart = ref(0)
         const premium = ref(true) 
         // 9.9 change to be false -> shipping change
+        function updateCart(){
+            cart.value += 1
+        }
         return{ 
             cart,
-            premium
+            premium,
+            updateCart
         }
     }
 

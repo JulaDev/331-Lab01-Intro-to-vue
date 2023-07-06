@@ -47,7 +47,14 @@ const productDisplay = {
     props:{
         premium: Boolean
     },
-    setup(props){
+    setup(props,{emit}){
+        const shipping = computed(() =>{
+            if (props.premium){
+                return 'Free'
+            } else {
+                return 30
+            }
+        })
         const product = ref('Boots')
         const brand = ref('SE 331')
         const description = ref('features to keep you warm in cold weather, or stylish socks for special occasions')
@@ -77,7 +84,7 @@ const productDisplay = {
         const cart = ref(0)
 
         function addToCart(){
-            cart.value +=1
+            emit('add-to-cart')
         }
 
         function updateImage(variantImage){
@@ -110,13 +117,6 @@ const productDisplay = {
             }
         })
 
-        const shipping = computed(() =>{
-            if (props.premium){
-                return 'Free'
-            } else {
-                return 30
-            }
-        })
         return{
             //product, 
             //brand,

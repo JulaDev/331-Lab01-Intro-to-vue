@@ -2,7 +2,8 @@ const { createApp, ref, computed } = Vue
 const app = createApp({
     setup(){
         const cart = ref(0)
-        const premium = ref(true)
+        const premium = ref(false) 
+        // 9.9 change to be false -> shipping change
         return{ 
             cart,
             premium
@@ -12,4 +13,4 @@ const app = createApp({
 })
 app.component('product-display',productDisplay)
 
-app.mount('#app')
+app.mount('#app',{})

@@ -84,7 +84,7 @@ const productDisplay = {
         const cart = ref(0)
 
         function addToCart(){
-            emit('add-to-cart')
+            emit('add-to-cart', variants.value[selectedVariant.value].id)
         }
 
         function updateImage(variantImage){

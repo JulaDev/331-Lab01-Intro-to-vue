@@ -3,7 +3,7 @@ const productDisplay = {
     template:
     /*html*/
     `
-    <a href = "index.html"></a>
+    
 
     <div class="product-display">
         <div class="product-container">

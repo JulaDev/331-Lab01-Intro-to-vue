@@ -2,7 +2,7 @@ const reviewForm = {
     template: 
     /*html*/
     `
-    <form class = "review-form">
+    <form class = "review-form" @submit.prevent="onSubmit">
     <h3>Leave a review</h3>
 
     <label for = "name">Name: </label>
@@ -22,14 +22,26 @@ const reviewForm = {
 
     <input class"button" type="submit" value="Submit">
     </form> `,
-    setup() {
+    setup(props,{emit}) {
         const form = reactive({
             name: '',
             review: '',
             rating: null
         })
+        function onSubmit(){
+            const productReview = {
+                name: form.name,
+                review: form.review,
+                rating: form.rating
+            }
+            emit('review-submitted', productReview)
+            form.name = ''
+            form.review =''
+            form.rating = null
+        }
         return{
-            form
+            form,
+            onSubmit
         }
 
     }

@@ -1,6 +1,7 @@
 const reviewForm = {
-    template: `
+    template: 
     /*html*/
+    `
     <form class = "review-form">
     <h3>Leave a review</h3>
     <label for = "name">Name: </label>

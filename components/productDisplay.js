@@ -39,10 +39,13 @@ const productDisplay = {
 
             <div v-for="size in sizes"> {{size}} </div>
 
+            <div>
             <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To Cart</button>
             <button class="button" @click="toggleStockStatus">Toggle</button>
             <button class="button" @:click="removeCart">Remove</button>
+            </div>
         </div>
+        <review-form></review-form>
     </div> 
     `,
     props:{

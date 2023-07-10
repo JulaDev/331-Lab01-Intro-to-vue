@@ -7,9 +7,10 @@ const app = createApp({
         function updateCart(id){
             cart.value.push(id)
         }
-        function removeCart(){
-            cart.value = []
-            console.log(cart.value)
+        function removeCart(id){
+            //cart.value = []
+            //console.log(cart.value)
+            cart.value.pop(id)
         }
         return{ 
             cart,
@@ -23,5 +24,6 @@ const app = createApp({
 app.component('product-display',productDisplay)
 app.component('product-details', productDetails)
 app.component('review-form', reviewForm)
+app.component('review-list' , reviewList)
 
-app.mount('#app',{})
+app.mount('#app')

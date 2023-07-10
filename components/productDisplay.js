@@ -45,7 +45,7 @@ const productDisplay = {
             <button class="button" @:click="removeCart">Remove</button>
             </div>
         </div>
-        <review-form></review-form>
+        <review-form @review-submitted = "addReview"></review-form>
     </div> 
     `,
     props:{
@@ -125,6 +125,13 @@ const productDisplay = {
             }
         })
 
+        const reviews = ref([])
+
+        function addReview(review){
+            reviews.value.push(review)
+        }
+         
+
         return{
             //product, 
             //brand,
@@ -145,7 +152,8 @@ const productDisplay = {
             updateVariant,
             saleStatus,
             shipping,
-            removeCart
+            removeCart,
+            addReview
         }
 
     }

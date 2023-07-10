@@ -20,7 +20,7 @@ const reviewForm = {
         <option>1</option>
     </select>
 
-    <input class"button" type="submit" value="Submit">
+    <input class="button" type="submit" value="Submit">
     </form> `,
     setup(props,{emit}) {
         const form = reactive({
@@ -29,6 +29,10 @@ const reviewForm = {
             rating: null
         })
         function onSubmit(){
+            if(form.name === '' || form.review === '' || form.rating === null){
+                alert('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                return
+            }
             const productReview = {
                 name: form.name,
                 review: form.review,

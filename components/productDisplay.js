@@ -154,7 +154,8 @@ const productDisplay = {
             saleStatus,
             shipping,
             removeCart,
-            addReview
+            addReview,
+            reviews
         }
 
     }

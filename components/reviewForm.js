@@ -20,9 +20,9 @@ const reviewForm = {
         <option>1</option>
     </select>
 
-    <br>
+    <br/>
     <label>Would you recommend this product?</label>
-    </br>
+    <br/>
     <input type="checkbox" id="rec" v-model = "rec"></input>
 
     <input class="button" type="submit" value="Submit">
@@ -43,7 +43,7 @@ const reviewForm = {
                 name: form.name,
                 review: form.review,
                 rating: form.rating,
-                rec: false
+                rec: form.rec
             }
             console.log(form);
             emit('review-submitted', productReview)
